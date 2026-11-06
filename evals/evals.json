@@ -1,0 +1,27 @@
+[
+  {
+    "skills": ["checking-version-stamps"],
+    "query": "Our release binary prints version dev. Why isn't the ldflags version working?",
+    "expected_behavior": [
+      "Finds the -ldflags in the release config (GoReleaser, Makefile or CI) and the main package it builds",
+      "Fills in template values and runs unstamped check for the release GOOS and GOARCH",
+      "Names the file and line to fix and the corrected -X target, without editing files unless asked"
+    ]
+  },
+  {
+    "skills": ["checking-version-stamps"],
+    "query": "Check the ldflags in .goreleaser.yaml before I tag a release.",
+    "expected_behavior": [
+      "Runs check once per GOOS and GOARCH the config builds, or says which it skipped",
+      "Treats exit code 2 as unknown, not as a pass"
+    ]
+  },
+  {
+    "skills": ["checking-version-stamps"],
+    "query": "Which version is stamped in dist/app_linux_amd64?",
+    "expected_behavior": [
+      "Runs unstamped binary with --want for the expected targets",
+      "If the binary is stripped, says the stamps can't be read from it instead of guessing, and doesn't run the binary unless asked"
+    ]
+  }
+]

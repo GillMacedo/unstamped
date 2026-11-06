@@ -1,0 +1,1 @@
+Add a check for this -X mistake: $ARGUMENTS. First reproduce it with a real `go build` and confirm the linker really ignores the flag without an error. Then add the detection to `plugin/scripts/unstamped.go`, add a fixture case to `tests/integration_test.go` that must be flagged and one that must stay quiet, and update the README's list of mistakes.

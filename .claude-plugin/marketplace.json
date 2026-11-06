@@ -1,0 +1,14 @@
+{
+  "name": "unstamped-marketplace",
+  "description": "Marketplace for unstamped, which checks that Go -ldflags -X version stamps really land in the binary.",
+  "owner": {
+    "name": "Giulliano Macedo"
+  },
+  "plugins": [
+    {
+      "name": "unstamped",
+      "source": "./plugin",
+      "description": "Check that go build -ldflags -X flags really set your version, commit and date variables, in source or in a built binary."
+    }
+  ]
+}
